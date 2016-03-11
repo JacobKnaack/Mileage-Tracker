@@ -1,0 +1,18 @@
+h1 {
+	font-family: 'Pacifico';
+	text-decoration: underline;
+	font-size: 32px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+p {
+	font-family: Quicksand;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
