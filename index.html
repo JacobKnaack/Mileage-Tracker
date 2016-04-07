@@ -4,20 +4,64 @@
     <title>mileageTracker</title>
     <link rel="stylesheet" type="text/css" href="styles/module.css"/>
     <link rel="stylesheet" type="text/css" href="styles/base.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/layout.css"/>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico"/>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand"/>
   </head>
   <body>
     <header id="menu">
-
-
       <h1>Mileage Log</h1>
 
+      <section id="odometer">
+        <div class="container">
+          <p>Starting Odometer:</p>
+          <p class="mileage" id="userInput">0</p>
+        </div>
+        <div id="showMeter">
+          <input id="meterButton" type="image" src="styles/assets/Button_Speedometer.png" onclick="showMeter()">
+        </div>
+        <div class="container">
+          <p>Ending Odometer:</p>
+          <p class="mileage" id="tripOutput">0</p>
+        </div>
+      </section>
     </header>
+
+    <section id="tripmeter">
+      <p>
+        Starting Location (lat, lon):<br/>
+        <span id="startLat">???</span>º, <span id="startLon">???</span>º
+      </p>
+      <p>
+        Current Location (lat, lon):<br/>
+        <span id="currentLat">???</span>º, <span id="currentLon">???</span>º
+      </p>
+      <p>
+        Distance Traveled:<br/>
+        <span id="distance">0,</span> km
+      </p>
+    </section>
+
     <div id="map"></div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDleGdEZLlURoFgCDs6OXFMjSCpvi3gfIw&callback=initMap"
-      async defer></script>
-    <script src="map.js"></script>
+    <section id="odoForm">
+      <form id="inputForm">
+        <p>Input your Odometer mileage:</p>
+        <input id="miles" type="number" value="0000000"><br/>
+        <input type="submit" value="Let's Go!">
+      </form>
+    </section>
+
+    <input name="trackButton" class="tripSwitch" id="start" type="image" src="styles/assets/trackMe_trackButton.png" onclick="mileageInput()"/>
+    <!-- <input name="trackButton" class="tripSwitch" id="end" type="image" src="style/assets/allDone_doneButton.png" onclick=""> -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script   src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+      async defer></script> <!--needs google maps api key -->
+    <script src="config.js"></script>
+    <!-- <script src="vendor/geolocation-marker.js"></script> -->
+    <script src="scripts/map.js"></script>
+    <script src="scripts/trip.js"></script>
   </body>
 </html>
