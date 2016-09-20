@@ -1,5 +1,5 @@
-var startPos;
-var miles;
+var startPos = null;
+var miles = null;
 var meterToggle = false;
 
 window.onload = function() {
