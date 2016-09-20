@@ -9,8 +9,8 @@ window.onload = function() {
     document.getElementById('startLon').innerHTML = startPos.coords.longitude;
   }, function (error) {
     alert('Error Occured: error code: ' + error.code);
-  })
-}
+  });
+};
 
 navigator.geolocation.watchPosition(function(position) {
   document.getElementById('currentLat').innerHTML = position.coords.latitude;
@@ -18,7 +18,7 @@ navigator.geolocation.watchPosition(function(position) {
   document.getElementById('distance').innerHTML =
     calculateDistance(startPos.coords.latitude, startPos.coords.longitude,
                       position.coords.latitude, position.coords.longitude);
-})
+});
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
   var R = 6371;
@@ -33,7 +33,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 }
 Number.prototype.toRad = function () {
   return this * Math.PI / 180;
-}
+};
 
 function showMeter() {
   if (meterToggle == false) {
@@ -56,7 +56,7 @@ function mileageInput() {
     $('#end').show();
     count();
     return false;
-  })
+  });
 }
 
 function count() {

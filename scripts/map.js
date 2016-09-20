@@ -29,13 +29,14 @@ function initMap() { //creates the google map using the google maps js API
   }
 }
 
-function handleLocationError(browserHasGeolation, marker, pos) {
+function handleLocationError(browserHasGeolocation, marker, pos) {
+  console.log(marker);
   marker.setPosition(pos);
   marker.setContent(browserHasGeolocation ?
                         'Error: The Geolocation service has failed.' :
                         'Error: Your browser does\'t support geolocation.');
 }
 
-function centerMap() {
+function centerMap(pos) {
   map.panTo(pos); //handles map centering
 }

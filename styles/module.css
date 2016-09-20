@@ -41,6 +41,15 @@
 #meterButton {
   padding-top: 25%;
   height: 50px;
+  outline: none;
+}
+#meterButton:hover {
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+#meterButton:active {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
 }
 
 #tripmeter p{
